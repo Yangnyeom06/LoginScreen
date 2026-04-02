@@ -36,6 +36,8 @@ namespace LoginScreen
                 txtPW.ForeColor = Color.Black;
                 txtPW.UseSystemPasswordChar = true;
             }
+            btnPWDel.Visible = true;
+            btnPWVisable.Visible = true;
         }
 
         private void txtPW_Leave(object sender, EventArgs e)
@@ -45,6 +47,8 @@ namespace LoginScreen
                 txtPW.Text = "패스워드";
                 txtPW.ForeColor = Color.Silver;
                 txtPW.UseSystemPasswordChar = false;
+                btnPWDel.Visible = false;
+                btnPWVisable.Visible = false;
             }
         }
 
@@ -81,6 +85,30 @@ namespace LoginScreen
                 e.SuppressKeyPress = true;
                 btnLogin.PerformClick();
             }
+        }
+
+        private void btnPWVisable_Click(object sender, EventArgs e)
+        {
+            if (btnPWVisable.Text != "◠")
+            {
+                btnPWVisable.Text = "◠";
+                txtPW.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                btnPWVisable.Text = "☉";
+                txtPW.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void btnPWDel_Click(object sender, EventArgs e)
+        {
+            txtPW.Text = "패스워드";
+            txtPW.ForeColor = Color.Silver;
+            btnPWDel.Visible = false;
+            btnPWVisable.Text = "☉";
+            btnPWVisable.Visible = false;
+            txtPW.UseSystemPasswordChar = false;
         }
     }
 }

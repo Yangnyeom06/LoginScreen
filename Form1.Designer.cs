@@ -33,6 +33,8 @@
             txtPW = new TextBox();
             btnLogin = new Button();
             lblErrorMsg = new Label();
+            btnPWVisable = new Button();
+            btnPWDel = new Button();
             SuspendLayout();
             // 
             // lblAppName
@@ -96,11 +98,35 @@
             lblErrorMsg.Text = "아이디 또는 비밀번호가 잘못되었습니다.";
             lblErrorMsg.Visible = false;
             // 
+            // btnPWVisable
+            // 
+            btnPWVisable.Location = new Point(325, 218);
+            btnPWVisable.Name = "btnPWVisable";
+            btnPWVisable.Size = new Size(36, 36);
+            btnPWVisable.TabIndex = 5;
+            btnPWVisable.Text = "☉";
+            btnPWVisable.UseVisualStyleBackColor = true;
+            btnPWVisable.Visible = false;
+            btnPWVisable.Click += btnPWVisable_Click;
+            // 
+            // btnPWDel
+            // 
+            btnPWDel.Location = new Point(367, 218);
+            btnPWDel.Name = "btnPWDel";
+            btnPWDel.Size = new Size(36, 36);
+            btnPWDel.TabIndex = 6;
+            btnPWDel.Text = "X";
+            btnPWDel.UseVisualStyleBackColor = true;
+            btnPWDel.Visible = false;
+            btnPWDel.Click += btnPWDel_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(534, 409);
+            ClientSize = new Size(519, 421);
+            Controls.Add(btnPWDel);
+            Controls.Add(btnPWVisable);
             Controls.Add(lblErrorMsg);
             Controls.Add(btnLogin);
             Controls.Add(txtPW);
@@ -119,5 +145,7 @@
         private TextBox txtPW;
         private Button btnLogin;
         private Label lblErrorMsg;
+        private Button btnPWVisable;
+        private Button btnPWDel;
     }
 }
